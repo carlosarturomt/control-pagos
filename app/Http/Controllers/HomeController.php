@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Company;
+use  Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -24,10 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-            $companies = Company::all();
-    
-            return view('home', compact('companies'));
-        
-        // return view('home');
+          $user_id = auth()->user()->id;
+          $company_id = DB::select('select * from users_have_companies where user_id = ?', [$user_id]);
+         // dd($company_id[0]->company_id);
+         $company_name[] = "";
+         foreach ($company_id as $key ) {
+            $company_name[] = DB::select('select * from companies where id = ?', [$key->company_id]);
+         }
+         //dd($company_name);
+         return view('home', compact('company_name'));
     }
 }

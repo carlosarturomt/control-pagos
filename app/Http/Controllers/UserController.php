@@ -8,9 +8,9 @@ use App\Company;
 
 class UserController extends Controller
 {
-    public function companies(){
-        $companies = Company::all();
+    // public function companies(){
+    //     $companies = Company::all();
 
-        return view('home', compact('companies'));
-    }
+    //     return view('home', compact('companies'));
+    // }
 }

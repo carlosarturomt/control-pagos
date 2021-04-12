@@ -14,17 +14,17 @@
                     </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in! {{$company_name[0]->name}}
                 </div>
             </div>
         </div>
         <div class="col-md-8">
             <div class="form-group">
-                <label for="Company">Compañia</label>
+                <label for="Company">Seleccione empresa:</label>
                 <select class="form-control" id="Company">
                     
-                    @foreach ($companies as $company)
-                        <option value="">{{ $company->name }}</option>                        
+                    @foreach ($company_name as $company )
+                        <option value="">{{ $company->name }}</option>                    
                     @endforeach
                 </select>
             </div>
