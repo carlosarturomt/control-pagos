@@ -17,4 +17,8 @@ class Client extends Model
     public function representatives(){
         return $this->belongsToMany(Representative::class);
     }
+
+    public function payments(){
+        return $this->hasMany(Payment::class);
+    }
 }

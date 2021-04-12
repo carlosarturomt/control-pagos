@@ -7,8 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(ClientsHaveRepresentatives::class, function (Faker $faker) {
     return [
-        'representative_id' => rand(1, 5),
-        'client_id' => rand(1 , 5),
+        'representative_id' => rand(1, 3),
+        'client_id' => rand(1 , 3),
         'client_company_id' => rand(1 ,3)
     ];
 });
